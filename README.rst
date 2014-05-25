@@ -18,9 +18,9 @@ Quick start
 2. Include the django-chartbuilder URLconf in your project ``urls.py`` like
    this::
 
-    url(r'^/admin/chartbuilder/', include('django_chartbuilder.urls')),
+    url(r'^/chartbuilder/$', include('django_chartbuilder.urls')),
 
-3. Navigate to ``/admin/chartbuilder/`` to get the default styled Chartbuilder
+3. Navigate to ``/chartbuilder/`` to get the default styled Chartbuilder
    chart generator (i.e. identical to http://quartz.github.io/Chartbuilder/)
 
 
@@ -32,14 +32,14 @@ generator.
 
 In your project's ``templates/django_chartbuilder/`` directory, create a
 template ``chartbuilder.html`` and extend
-``djangno_chartbuilder/chartbuilder.html``::
+``djangno_chartbuilder/index.html``::
 
         <!-- templates/django_chartbuilder/chartbuilder.html -->
-        {% extends "django_chartbuilder/chartbuilder.html" %}
+        {% extends "django_chartbuilder/index.html" %}
         
         {% block title %}My Custom Chartbuilder Generator{% endblock %}
     
-        {% block more_js %}
+        {% block extrajs %}
             <script src="some_random_script.js"></script>
         {% endblock %}
 
