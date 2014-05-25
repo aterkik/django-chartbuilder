@@ -1,0 +1,4 @@
+include setup.py README.rst LICENSE MANIFEST.in
+recursive-include django_chartbuilder *
+recursive-include docs *
+global-exclude *~
