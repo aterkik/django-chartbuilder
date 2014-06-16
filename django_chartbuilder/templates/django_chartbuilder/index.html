@@ -29,16 +29,16 @@
   <div id="interactiveContent">
 
    <div id="leftColumn" class="column">
-       {% block left_column %}
        <div class="cbInner">
            <div id="staticContainer">
+                {% block chart_container %}
                 <div id="chartContainer"></div>
   
                 <canvas id="canvas" width="1200px" height="676px"></canvas>
                 <canvas id="favicanvas" width="16px" height="16px"></canvas>
+                {% endblock %}
            </div>
         </div>
-        {% endblock %}
    </div>
 
    <div id="rightColumn" class="column">
@@ -71,9 +71,9 @@
 
                     <div class="optionBlock">
                         {% block heading_3 %}<h2>3. Chart Options</h2>{% endblock heading_3 %}
-                      <div class="optionGroup"><label for="chart_title">Title</label><input type="text" name="chart_title" value="" id="chart_title"></div>
-                      <div class="optionGroup"><label for="credit">Credit</label><input id="creditLine" type="text" name="credit" value="Made with Chartbuilder"></div>
-                      <div class="optionGroup"><label for="source">Source</label><input id="sourceLine" type="text" name="source" value="Data: ">
+                        <div class="optionGroup"><label for="chart_title">Title</label><input type="text" name="chart_title" value="{% block chart_title %}{% endblock %}" id="chart_title"></div>
+                      <div class="optionGroup"><label for="credit">Credit</label><input id="creditLine" type="text" name="credit" value="{% block chart_credit_value %}Made with Chartbuilder{% endblock %}"></div>
+                      <div class="optionGroup"><label for="source">Source</label><input id="sourceLine" type="text" name="source" value="{% block chart_source_value %}Data: {% endblock %}">
                       <cite>Something like "Data: Bureau of Labor Statistics" or "Data compiled by Factset"</cite></div>
                     </div>
         <div class="optionBlock">
@@ -150,7 +150,7 @@
             </div>
             {% endblock %}
 
-            {% block copy_html %}
+            {% block copy_html_table %}
             <div class="optionBlock full">
               {% block heading_7 %}<h4>5. Copy the HTML table of your data (if you want)</h4>{% endblock heading_7 %}
               <textarea  class="input-box"  id="table-html" type="text" rows="10"></textarea>
