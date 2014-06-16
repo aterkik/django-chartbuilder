@@ -27,16 +27,19 @@
         {% block content %}
   <!-- Add your site or application content here -->
   <div id="interactiveContent">
+
    <div id="leftColumn" class="column">
-        <div class="cbInner">
-       <div id="staticContainer">
-        <div id="chartContainer"></div>
+       {% block left_column %}
+       <div class="cbInner">
+           <div id="staticContainer">
+                <div id="chartContainer"></div>
   
-        <canvas id="canvas" width="1200px" height="676px"></canvas> 
-        <canvas id="favicanvas" width="16px" height="16px"></canvas> 
-       </div>
+                <canvas id="canvas" width="1200px" height="676px"></canvas>
+                <canvas id="favicanvas" width="16px" height="16px"></canvas>
+           </div>
         </div>
-      </div>
+        {% endblock %}
+   </div>
 
    <div id="rightColumn" class="column">
      <div class="cbInner">
@@ -133,6 +136,8 @@
        </div>
               <div class="optionGroup showonlywith-ordinal">No options available</div>
             </div>
+
+            {% block export_image %}
             <div class="optionBlock full">
               {% block heading_6 %}<h2>4. Export</h2>{% endblock %}
               <div class="updateButton" id="createImageButton">
@@ -143,6 +148,9 @@
                 <a download="new_chart.svg" id="downloadSVGLink" class="downloadLink" href="#" target="_blank">Download&nbsp;SVG&nbsp;of&nbsp;Chart</a>
               </div>
             </div>
+            {% endblock %}
+
+            {% block copy_html %}
             <div class="optionBlock full">
               {% block heading_7 %}<h4>5. Copy the HTML table of your data (if you want)</h4>{% endblock heading_7 %}
               <textarea  class="input-box"  id="table-html" type="text" rows="10"></textarea>
@@ -153,6 +161,7 @@
                 </div>
               </div>
             </div>
+            {% endblock %}
             <div class="clearfix"></div>
       </div>
       
