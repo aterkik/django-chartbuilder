@@ -5,18 +5,21 @@ Django Chartbuilder
 A simple Django application for integrating
 `Chartbuilder <https://github.com/Quartz/Chartbuilder/>`_.
 
+Install
+-------
+     ``pip install django_chartbuilder``
+     
 Quick start
 -----------
 
-1. Add ``django_chartbuilder`` to your ``INSTALLED_APPS`` setting like this::
+1. Add ``django_chartbuilder`` to your ``INSTALLED_APPS`` setting::
 
     INSTALLED_APPS = (
         ...
         'django_chartbuilder',
     )
 
-2. Include the django-chartbuilder URLconf in your project ``urls.py`` like
-   this::
+2. Include the django-chartbuilder URLconf in your project ``urls.py``::
 
     url(r'^/chartbuilder/$', include('django_chartbuilder.urls')),
 
