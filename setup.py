@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-chartbuilder',
-    version='0.1',
+    version='0.2',
     packages=['django_chartbuilder'],
     include_package_data=True,
     license='MIT License',
@@ -30,5 +30,6 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+        'Topic :: Multimedia :: Graphics :: Presentation'
     ],
 )
