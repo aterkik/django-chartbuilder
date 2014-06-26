@@ -144,8 +144,10 @@
                 <p>Create Image of Chart</p>
               </div>
               <div id="downloadLinksDiv" class="downloadLinks hide">
-                <a download="new_chart.png" id="downloadImageLink" class="downloadLink" href="#" target="_blank">Download&nbsp;Image&nbsp;of&nbsp;Chart</a> or 
-                <a download="new_chart.svg" id="downloadSVGLink" class="downloadLink" href="#" target="_blank">Download&nbsp;SVG&nbsp;of&nbsp;Chart</a>
+                {% block export_image_links %}
+                  <a download="new_chart.png" id="downloadImageLink" class="downloadLink" href="#" target="_blank">Download&nbsp;Image&nbsp;of&nbsp;Chart</a> or 
+                  <a download="new_chart.svg" id="downloadSVGLink" class="downloadLink" href="#" target="_blank">Download&nbsp;SVG&nbsp;of&nbsp;Chart</a>
+                {% endblock export_image_links %}
               </div>
             </div>
             {% endblock %}
